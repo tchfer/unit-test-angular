@@ -32,6 +32,7 @@ describe(UniqueIdService.name, () => {
     // Cleaner and more dynamic way to writing if more empty values are added
     const emptyValues = [null, undefined, ''];
     emptyValues.forEach(emptyValue => {
+      // Throw needs to be wrapped a function to work
       expect(() => service.generateUniqueIdWithPrefix(emptyValue)).toThrow();
     })
 
