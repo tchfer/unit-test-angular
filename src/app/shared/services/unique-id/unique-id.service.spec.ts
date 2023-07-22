@@ -12,6 +12,15 @@ describe(UniqueIdService.name, () => {
   it(`#${UniqueIdService.prototype.generateUniqueIdWithPrefix.name} should generate id when called with prefix`, () => {
     const id = service.generateUniqueIdWithPrefix('app');
     expect(id.startsWith('app-')).toBeTrue();
+
+    // Only accepts literals (true or false)
+    // expect(true).toBeTrue();
+
+    // Checks if values are the same
+    // expect(true).toBe(true);
+
+    // Most genereric. Will return true even when passing an instance
+    // expect(new Boolean(true)).toBeTruthy();
   });
 
   it(`#${UniqueIdService.prototype.generateUniqueIdWithPrefix.name} should not generate duplicate ids when called multiple times`, ()=> {
